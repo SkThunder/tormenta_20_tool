@@ -17,9 +17,9 @@ module.exports = {
 
   async getById(request, response) {
     try {
-      const { id } = request.params;
-      const result = await UserModel.getById(id);
+      const { user_id } = request.params;
 
+      const result = await UserModel.getById(user_id);
       return response.status(200).json(result);
     } catch (err) {
       console.warn("User getById failed: " + err);
@@ -31,10 +31,10 @@ module.exports = {
 
   async update(request, response) {
     try {
-      const { id } = request.params;
+      const { user_id } = request.params;
       const user = request.body;
-      const result = await UserModel.updateById(id, user);
 
+      const result = await UserModel.updateById(user_id, user);
       return response.status(200).json(result);
     } catch (err) {
       console.warn("User update failed: " + err);
@@ -46,9 +46,9 @@ module.exports = {
 
   async delete(request, response) {
     try {
-      const { id } = request.params;
+      const { user_id } = request.params;
 
-      const result = await UserModel.deleteById(id);
+      const result = await UserModel.deleteById(user_id);
       return response.status(200).json(result);
     } catch (err) {
       console.warn("User delete failed: " + err);

@@ -1,7 +1,9 @@
 const connection = require("../database/connection");
+const { UpdateFunction, CreateFunction } = require("../utils/UpdateFunction");
 
 module.exports = {
   async create(user) {
+    user = CreateFunction(user);
     const result = await connection("users").insert(user);
     return result;
   },
@@ -12,6 +14,7 @@ module.exports = {
   },
 
   async updateById(id, user) {
+    user = UpdateFunction(user)
     const result = await connection("users").where({ id }).update(user);
     return result;
   },
