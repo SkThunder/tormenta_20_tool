@@ -1,5 +1,5 @@
 const connection = require("../database/connection");
-const { UpdateFunction, CreateFunction } = require("../utils/UpdateFunction");
+const { UpdateFunction, CreateFunction } = require("../utils/TimeFunctions");
 
 module.exports = {
   async create(user) {
