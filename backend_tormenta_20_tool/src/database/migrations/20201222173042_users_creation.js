@@ -9,6 +9,7 @@ exports.up = function (knex) {
         "https://i.pinimg.com/564x/ae/5c/47/ae5c47d4a6ac53b79dc88d763b4c8095.jpg"
       )
       .notNullable();
+    table.enu("user_type", ['Admin', 'Player']).comment("Tipo de usuário").defaultTo('Player').notNullable();
     table.timestamps(true);
   });
 };

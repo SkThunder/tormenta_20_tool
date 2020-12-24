@@ -5,6 +5,7 @@ module.exports = {
     [Segments.BODY]: Joi.object().keys({
       user_name: Joi.string().min(3).max(60).required(),
       image_url: Joi.string().max(100).optional(),
+      user_type: Joi.string().max(6).optional(),
     }),
   }),
 
@@ -21,6 +22,7 @@ module.exports = {
     [Segments.BODY]: Joi.object().keys({
       user_name: Joi.string().min(3).max(60).optional(),
       image_url: Joi.string().max(100).optional(),
+      user_type: Joi.string().max(6).optional(),
     }),
   }),
 
