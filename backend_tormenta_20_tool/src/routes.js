@@ -6,10 +6,10 @@ const UserController = require("./controllers/UserController");
 const { generateId } = require("./middlewares/IdGenerator");
 
 //Users
-routes.post("/user", UserValidator.create, generateId("us_id"), UserController.create);
-routes.get("/user/:us_id", UserValidator.getById, UserController.getById);
-routes.put("/user/:us_id", UserValidator.update, UserController.update);
-routes.delete("/user/:us_id", UserValidator.delete, UserController.delete);
+routes.post("/user", UserValidator.create, generateId("id"), UserController.create);
+routes.get("/user/:id", UserValidator.getById, UserController.getById);
+routes.put("/user/:id", UserValidator.update, UserController.update);
+routes.delete("/user/:id", UserValidator.delete, UserController.delete);
 
 routes.get("/test", (request, response) => {
   try {

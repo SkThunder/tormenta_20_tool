@@ -17,8 +17,8 @@ module.exports = {
 
   async getById(request, response) {
     try {
-      const { us_id } = request.params;
-      const result = await User.getById(us_id);
+      const { id } = request.params;
+      const result = await UserModel.getById(id);
 
       return response.status(200).json(result);
     } catch (err) {
@@ -31,9 +31,9 @@ module.exports = {
 
   async update(request, response) {
     try {
-      const { us_id } = request.params;
+      const { id } = request.params;
       const user = request.body;
-      const result = await UserModel.updateById(us_id, user);
+      const result = await UserModel.updateById(id, user);
 
       return response.status(200).json(result);
     } catch (err) {
@@ -46,9 +46,9 @@ module.exports = {
 
   async delete(request, response) {
     try {
-      const { us_id } = request.params;
+      const { id } = request.params;
 
-      const result = await UserModel.deleteById(us_id);
+      const result = await UserModel.deleteById(id);
       return response.status(200).json(result);
     } catch (err) {
       console.warn("User delete failed: " + err);
