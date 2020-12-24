@@ -56,6 +56,7 @@ exports.up = function (knex) {
       .integer("base_mana_points")
       .comment("Pontos de mana base do personagem")
       .defaultTo(0);
+    table.timestamps(true);
   });
 };
 
