@@ -1,0 +1,16 @@
+type Race {
+    name: String!
+}
+
+input RaceInput {
+    name: String!
+}
+
+type Query {
+    races: [Race]!
+}
+
+type Mutation {
+    createRace(data: RaceInput): Race!
+}
+

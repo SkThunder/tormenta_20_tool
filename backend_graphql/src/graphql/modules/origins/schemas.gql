@@ -1,0 +1,15 @@
+type Origin {
+    name: String!
+}
+
+input OriginInput {
+    name: String!
+}
+
+type Query {
+    origins: [Origin]!
+}
+
+type Mutation {
+    createOrigin(data: OriginInput): Origin!
+}

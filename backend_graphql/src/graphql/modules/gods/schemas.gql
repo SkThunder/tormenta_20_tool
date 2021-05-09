@@ -1,0 +1,15 @@
+type God {
+    name: String!
+}
+
+input GodInput {
+    name: String!
+}
+
+type Query {
+    gods: [God]!
+}
+
+type Mutation {
+    createGod(data: GodInput): God!
+}

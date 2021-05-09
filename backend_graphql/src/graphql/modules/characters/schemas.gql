@@ -1,0 +1,15 @@
+type Character {
+    name: String!
+}
+
+input CharacterInput {
+    name: String!
+}
+
+type Query {
+    characters(user: ID): [Character]!
+}
+
+type Mutation {
+    createCharacter(data: CharacterInput): Character!
+}
