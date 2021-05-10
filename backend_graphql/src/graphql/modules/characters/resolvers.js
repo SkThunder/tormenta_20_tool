@@ -1,17 +1,24 @@
 import CharacterModel from "../../../models/Character";
 import GodModel from "../../../models/God";
+import UserModel from "../../../models/User";
 
 export default {
   Character: {
-    devoutGod: ({ devoutGod, devoutGodId, ...character}) => {
+    user: ({ user, userId }) => {
+      if (user) return user;
+      if (userId) return UserModel.findById(userId);
+    },
+    devoutGod: ({ devoutGod, devoutGodId }) => {
       if (devoutGod) return devoutGod;
       if (devoutGodId) return GodModel.findById(devoutGodId);
     },
   },
 
   Query: {
-    getPlayerCharacters: (_, { userId }) => CharacterModel.find({ userId }).populate("devoutGod"),
-    getPublicCharacters: () => CharacterModel.find({ isPublic: true }).populate("devoutGod"),
+    getPlayerCharacters: (_, { userId }) =>
+      CharacterModel.find({ userId }).populate("devoutGod").populate("user"),
+    getPublicCharacters: () =>
+      CharacterModel.find({ isPublic: true }).populate("devoutGod").populate("user"),
     getCharacter: (_, { characterId }) => CharacterModel.findById(characterId),
   },
 
@@ -24,14 +31,15 @@ export default {
       CharacterModel.findByIdAndUpdate(characterId, data),
     updateStatus: (_, { characterId, data }) =>
       CharacterModel.findByIdAndUpdate(characterId, data),
-    updateDevoutGod: (_, { characterId, data }) => {
-      if (characterId) {
-        return CharacterModel.findByIdAndUpdate(characterId, data);
+    updateDevoutGod: (_, { characterId, godId }) => {
+      if (characterId && godId) {
+        return CharacterModel.findByIdAndUpdate(characterId, {
+          devoutGodId: godId,
+        });
       } else {
-        return CharacterModel.findByIdAndUpdate(
-          { $unset: { devoutGodId: "" } },
-          data
-        );
+        return CharacterModel.findByIdAndUpdate(characterId, {
+          $unset: { devoutGodId: "" },
+        });
       }
     },
     deleteCharacter: (_, { characterId }) =>

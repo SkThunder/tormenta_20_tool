@@ -4,7 +4,13 @@ type Character {
   Nome do personagem
   """
   name: String
+  """
+  ID - Jogador
+  """
   userId: ID
+  """
+  Jogador
+  """
   user: User
   """
   Atributo Força
@@ -47,13 +53,25 @@ type Character {
   """
   currPm: Int
   """
-  Id - Devoto de: Deus
+  Pontos de experiência atuais
+  """
+  exp: Int
+  """
+  ID - Devoto de: Deus
   """
   devoutGodId: ID
   """
   Devoto de: Deus
   """
   devoutGod: God
+  """
+  ID - origem do personagem
+  """
+  originId: ID
+  """
+  Origem do personagem
+  """
+  origin: Origin
 }
 
 input InitialInput {
@@ -75,10 +93,8 @@ input StatusInput {
   currPv: Int
   pm: Int
   currPm: Int
-}
-
-input devoutGodInput {
-  devoutGodId: ID
+  exp: Int
+  isPublic: Boolean
 }
 
 type Query {
@@ -91,6 +107,6 @@ type Mutation {
   newCharacter(userId: ID!, data: InitialInput): Character
   updateAttributes(characterId: ID!, data: AtributeInput): Character
   updateStatus(characterId: ID!, data: StatusInput): Character
-  updateDevoutGod(characterId: ID!, data: devoutGodInput): Character
+  updateDevoutGod(characterId: ID!, godId: ID): Character
   deleteCharacter(characterId: ID): Character
 }

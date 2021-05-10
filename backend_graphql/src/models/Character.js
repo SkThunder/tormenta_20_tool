@@ -52,18 +52,34 @@ const CharacterSchema = new mongoose.Schema(
     currPm: {
       type: Number,
     },
+    //Ponto de experiência do Personagem
+    exp: {
+      type: Number,
+    }, 
     //Personagem público
     isPublic: {
       type: Boolean,
     },
-    //Devoto de: Deus
+    //ID - Devoto de: Deus
     devoutGodId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "gods",
     },
+    //ID - Origem
+    originId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "origins",
+    }
   },
   { timestamps: false, versionKey: false }
 );
+
+CharacterSchema.virtual("user", {
+  ref: "users",
+  localField: "userId",
+  foreignField: "_id",
+  justOne: true,
+})
 
 CharacterSchema.virtual("devoutGod", {
   ref: "gods",
