@@ -1,15 +1,96 @@
 type Character {
-    name: String!
+  _id: ID!
+  """
+  Nome do personagem
+  """
+  name: String
+  userId: ID
+  user: User
+  """
+  Atributo Força
+  """
+  str: Int
+  """
+  Atributo Destreza
+  """
+  dex: Int
+  """
+  Atributo Constituição
+  """
+  con: Int
+  """
+  Atributo Inteligência
+  """
+  int: Int
+  """
+  Atributo Sabedoria
+  """
+  wis: Int
+  """
+  Atributo Carisma
+  """
+  car: Int
+  """
+  Pontos de vida máximos
+  """
+  pv: Int
+  """
+  Pontos de vida atuais
+  """
+  currPv: Int
+  """
+  Pontos de mana máximos
+  """
+  pm: Int
+  """
+  Pontos de mana atuais
+  """
+  currPm: Int
+  """
+  Id - Devoto de: Deus
+  """
+  devoutGodId: ID
+  """
+  Devoto de: Deus
+  """
+  devoutGod: God
 }
 
-input CharacterInput {
-    name: String!
+input InitialInput {
+  name: String
+  isPublic: Boolean
+}
+
+input AtributeInput {
+  str: Int
+  dex: Int
+  con: Int
+  int: Int
+  wis: Int
+  car: Int
+}
+
+input StatusInput {
+  pv: Int
+  currPv: Int
+  pm: Int
+  currPm: Int
+}
+
+input devoutGodInput {
+  devoutGodId: ID
 }
 
 type Query {
-    characters(user: ID): [Character]!
+  getPlayerCharacters(userId: ID): [Character]!
+  getPublicCharacters: [Character]!
+  getCharacter(characterId: ID): Character
 }
 
 type Mutation {
-    createCharacter(data: CharacterInput): Character!
+  newCharacter(userId: ID!, data: InitialInput): Character
+  updateAttributes(characterId: ID!, data: AtributeInput): Character
+  updateStatus(characterId: ID!, data: StatusInput): Character
+  updateDevoutGod(characterId: ID!, data: devoutGodInput): Character
+  deleteCharacter(characterId: ID): Character
 }

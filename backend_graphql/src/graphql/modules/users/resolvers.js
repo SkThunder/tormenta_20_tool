@@ -2,18 +2,12 @@ import UserModel from "../../../models/User";
 
 export default {
   Query: {
-    users: () => {
-      return [
-        {
-          name: "Jhonny",
-        },
-      ];
-    },
+    users: () => UserModel.find(),
   },
 
   Mutation: {
-    createUser: (_, {data}) => {
-      UserModel.create(data);
-    },
+    createUser: (_, { data }) => UserModel.create(data),
+
+    deleteUser: (_, { userId }) => UserModel.findByIdAndDelete(userId),
   },
 };

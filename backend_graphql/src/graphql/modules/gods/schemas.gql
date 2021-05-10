@@ -1,15 +1,70 @@
 type God {
-    name: String!
+  _id: ID
+  """
+  Nome do Deus
+  """
+  name: String!
+  """
+  Portfólio do Deus
+  """
+  portfolio: [String]
+  """
+  Descrição do Deus
+  """
+  description: String
+  """
+  Obrigações e Restrições do Deus
+  """
+  obligations: String
+  """
+  Crenças e Objetivos do Deus
+  """
+  creeds: String
+  """
+  Arma favorita do Deus
+  """
+  favoriteWeapon: String
+  """
+  Símbolo sagrado do Deus
+  """
+  holySymbol: String
+  """
+  Tipo de energia do Deus
+  """
+  energyType: String
+  """
+  Classes permitidas do Deus
+  """
+  approvedClasses: [ID]
+  """
+  Raças permitidas do Deus
+  """
+  approvedRaces: [ID]
+  """
+  Poderes concedidos do Deus
+  """
+  grantedPowers: [ID]
 }
 
 input GodInput {
-    name: String!
+  name: String
+  description: String
+  portfolio: [String]
+  obligations: String
+  creeds: String
+  favoriteWeapon: String
+  holySymbol: String
+  energyType: String
+  approvedClasses: [ID]
+  approvedRaces: [ID]
+  grantedPowers: [ID]
 }
 
 type Query {
-    gods: [God]!
+  gods: [God]!
 }
 
 type Mutation {
-    createGod(data: GodInput): God!
+  createGod(data: GodInput): God
+  updateGod(godId: ID, data: GodInput): God
 }
