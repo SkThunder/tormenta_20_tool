@@ -74,7 +74,7 @@ type Character {
   origin: Origin
 }
 
-input InitialInput {
+input InitialCharacterInput {
   name: String
   isPublic: Boolean
 }
@@ -104,7 +104,7 @@ type Query {
 }
 
 type Mutation {
-  newCharacter(userId: ID!, data: InitialInput): Character
+  newCharacter(userId: ID!, data: InitialCharacterInput): Character
   updateAttributes(characterId: ID!, data: AtributeInput): Character
   updateStatus(characterId: ID!, data: StatusInput): Character
   updateDevoutGod(characterId: ID!, godId: ID): Character
