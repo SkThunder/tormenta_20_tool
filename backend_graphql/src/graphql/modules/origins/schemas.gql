@@ -1,4 +1,5 @@
 type Origin {
+    _id: ID
     """
     Nome da origem
     """

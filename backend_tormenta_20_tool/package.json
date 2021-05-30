@@ -6,7 +6,8 @@
   "author": "João Prates <jvdprates@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

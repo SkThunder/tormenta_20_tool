@@ -1,0 +1,70 @@
+type Action {
+    """
+    Título do uso da perícia
+    """
+    title: String
+    """
+    Descrição do uso de perícia
+    """
+    description: String
+}
+
+type Skill {
+    _id: ID
+    """
+    Nome da proficiência
+    """
+    name: String
+    """
+    Atributo chave padrão da proficiência
+    """
+    defaultAttribute: String
+    """
+    Perícia somente treinada?
+    """
+    trainedOnly: Boolean
+    """
+    Aplica penalidade de armadura
+    """
+    armorPenalty: Boolean
+    """
+    Descrição do uso de perícia
+    """
+    description: String
+    """
+    Usos principais da perícia
+    """
+    uses: [Action]
+}
+
+enum Atribute {
+    STR
+    DEX
+    CON
+    INT
+    WIS
+    CAR
+}
+
+input SkillInput {
+    name: String
+    defaultAttribute: Atribute
+    trainedOnly: Boolean
+    armorPenalty: Boolean
+    description: String
+    uses: [ActionInput]
+}
+
+input ActionInput {
+    title: String
+    description: String
+}
+
+type Query {
+    skills: [Skill]
+}
+
+type Mutation {
+    createSkill(data: SkillInput): Skill
+    updateSkill(skillId: ID, data: SkillInput): Skill
+}
