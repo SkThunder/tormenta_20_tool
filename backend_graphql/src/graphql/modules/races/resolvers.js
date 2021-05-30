@@ -10,7 +10,7 @@ export default {
   },
 
   Mutation: {
-    createRace: (_, {data}) => {
+    createRace: (_, { data }) => {
       return data;
     },
   },

@@ -18,7 +18,9 @@ export default {
     getPlayerCharacters: (_, { userId }) =>
       CharacterModel.find({ userId }).populate("devoutGod").populate("user"),
     getPublicCharacters: () =>
-      CharacterModel.find({ isPublic: true }).populate("devoutGod").populate("user"),
+      CharacterModel.find({ isPublic: true })
+        .populate("devoutGod")
+        .populate("user"),
     getCharacter: (_, { characterId }) => CharacterModel.findById(characterId),
   },
 

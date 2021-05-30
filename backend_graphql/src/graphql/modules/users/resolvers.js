@@ -7,7 +7,8 @@ export default {
 
   Mutation: {
     createUser: (_, { data }) => UserModel.create(data),
-
+    updateUser: (_, { userId, data }) =>
+      UserModel.findByIdAndUpdate(userId, data),
     deleteUser: (_, { userId }) => UserModel.findByIdAndDelete(userId),
   },
 };

@@ -1,22 +1,29 @@
 type User {
-    _id: ID!
-    name: String!
-    password: String!
-    firebaseId: ID
-    email: String!
+  _id: ID!
+  name: String!
+  password: String!
+  firebaseId: ID
+  email: String!
 }
 
 input UserInput {
-    name: String!
-    password: String!
-    email: String!
+  name: String!
+  password: String!
+  email: String!
+}
+
+input UserUpdateInput {
+  name: String
+  password: String
+  email: String
 }
 
 type Query {
-    users: [User]!
+  users: [User]!
 }
 
 type Mutation {
-    createUser(data: UserInput): User
-    deleteUser(userId: ID): User
+  createUser(data: UserInput): User
+  updateUser(userId: ID, data: UserUpdateInput): User
+  deleteUser(userId: ID): User
 }

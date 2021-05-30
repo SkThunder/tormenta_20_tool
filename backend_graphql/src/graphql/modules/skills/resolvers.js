@@ -7,6 +7,7 @@ export default {
 
   Mutation: {
     createSkill: (_, { data }) => SkillModel.create(data),
-    updateSkill: (_, { skillId, data }) => SkillModel.findByIdAndUpdate(skillId, data),
+    updateSkill: (_, { skillId, data }) =>
+      SkillModel.findByIdAndUpdate(skillId, data),
   },
 };

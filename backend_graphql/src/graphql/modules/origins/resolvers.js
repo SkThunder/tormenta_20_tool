@@ -6,7 +6,8 @@ export default {
   },
 
   Mutation: {
-    createOrigin: (_, {data}) => OriginModel.create(data),
-    updateOrigin: (_, {originId, data}) => OriginModel.findByIdAndUpdate(originId, data)
+    createOrigin: (_, { data }) => OriginModel.create(data),
+    updateOrigin: (_, { originId, data }) =>
+      OriginModel.findByIdAndUpdate(originId, data),
   },
 };

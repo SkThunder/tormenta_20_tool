@@ -1,45 +1,45 @@
 type Origin {
-    _id: ID
-    """
-    Nome da origem
-    """
-    name: String!
-    """
-    Descrição da Origem
-    """
-    description: String
-    """
-    ID - Benefícios de origem - Perícias
-    """
-    skillIds: [ID]
-    """
-    ID - Benefícios de origem - Poderes
-    """
-    powerIds: [ID]
-    """
-    ID - Itens iniciais
-    """
-    initialItemIds: [ID]
+  _id: ID
+  """
+  Nome da origem
+  """
+  name: String!
+  """
+  Descrição da Origem
+  """
+  description: String
+  """
+  ID - Benefícios de origem - Perícias
+  """
+  skillIds: [ID]
+  """
+  ID - Benefícios de origem - Poderes
+  """
+  powerIds: [ID]
+  """
+  ID - Itens iniciais
+  """
+  initialItemIds: [ID]
 }
 
 input InitialOriginInput {
-    name: String!
-    description: String
+  name: String!
+  description: String
 }
 
 input OriginInput {
-    name: String
-    description: String
-    skillIds: [ID]
-    powerIds: [ID]
-    initialItemIds: [ID]
+  name: String
+  description: String
+  skillIds: [ID]
+  powerIds: [ID]
+  initialItemIds: [ID]
 }
 
 type Query {
-    origins: [Origin]!
+  origins: [Origin]!
 }
 
 type Mutation {
-    createOrigin(data: InitialOriginInput): Origin
-    updateOrigin(originId: ID, data: OriginInput): Origin
+  createOrigin(data: InitialOriginInput): Origin
+  updateOrigin(originId: ID, data: OriginInput): Origin
 }

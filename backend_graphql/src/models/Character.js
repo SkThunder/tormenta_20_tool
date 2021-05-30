@@ -55,7 +55,7 @@ const CharacterSchema = new mongoose.Schema(
     //Ponto de experiência do Personagem
     exp: {
       type: Number,
-    }, 
+    },
     //Personagem público
     isPublic: {
       type: Boolean,
@@ -69,7 +69,7 @@ const CharacterSchema = new mongoose.Schema(
     originId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "origins",
-    }
+    },
   },
   { timestamps: false, versionKey: false }
 );
@@ -79,14 +79,14 @@ CharacterSchema.virtual("user", {
   localField: "userId",
   foreignField: "_id",
   justOne: true,
-})
+});
 
 CharacterSchema.virtual("devoutGod", {
   ref: "gods",
   localField: "devoutGodId",
   foreignField: "_id",
   justOne: true,
-})
+});
 
 const CharacterModel = mongoose.model("characters", CharacterSchema);
 

@@ -16,8 +16,8 @@ const UserSchema = new mongoose.Schema(
     },
     firebaseId: {
       type: String,
-      required: false
-    }
+      required: false,
+    },
   },
   { timestamps: false, versionKey: false }
 );

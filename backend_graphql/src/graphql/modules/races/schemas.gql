@@ -1,16 +1,15 @@
 type Race {
-    name: String!
+  name: String!
 }
 
 input RaceInput {
-    name: String!
+  name: String!
 }
 
 type Query {
-    races: [Race]!
+  races: [Race]!
 }
 
 type Mutation {
-    createRace(data: RaceInput): Race!
+  createRace(data: RaceInput): Race!
 }
-
