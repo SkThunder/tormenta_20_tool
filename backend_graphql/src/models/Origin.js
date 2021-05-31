@@ -19,10 +19,10 @@ const OriginSchema = new mongoose.Schema(
       ],
     },
     //ID - Beneficios de origem - Poderes
-    powerIds: [
+    abilityIds: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "powers",
+        ref: "abilities",
       },
     ],
     //ID - Itens iniciais

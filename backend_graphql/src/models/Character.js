@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const CharacterSchema = new mongoose.Schema(
   {
+    //ID - Jogador
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "users",
@@ -11,6 +12,7 @@ const CharacterSchema = new mongoose.Schema(
     name: {
       type: String,
       default: "Novo Personagem",
+      required: true,
     },
     //ID - Raça
     raceId: {

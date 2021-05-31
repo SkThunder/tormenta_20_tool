@@ -15,7 +15,7 @@ type Origin {
   """
   ID - Benefícios de origem - Poderes
   """
-  powerIds: [ID]
+  abilityIds: [ID]
   """
   ID - Itens iniciais
   """
@@ -31,7 +31,7 @@ input OriginInput {
   name: String
   description: String
   skillIds: [ID]
-  powerIds: [ID]
+  abilityIds: [ID]
   initialItemIds: [ID]
 }
 

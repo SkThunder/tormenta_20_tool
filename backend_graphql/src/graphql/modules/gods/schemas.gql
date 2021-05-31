@@ -35,15 +35,15 @@ type God {
   """
   Classes permitidas do Deus
   """
-  approvedClasses: [ID]
+  approvedClassIds: [ID]
   """
   Raças permitidas do Deus
   """
-  approvedRaces: [ID]
+  approvedRaceIds: [ID]
   """
   Poderes concedidos do Deus
   """
-  grantedPowers: [ID]
+  grantedPowerIds: [ID]
 }
 
 input GodInput {
@@ -55,9 +55,9 @@ input GodInput {
   favoriteWeapon: String
   holySymbol: String
   energyType: String
-  approvedClasses: [ID]
-  approvedRaces: [ID]
-  grantedPowers: [ID]
+  approvedClassIds: [ID]
+  approvedRaceIds: [ID]
+  grantedPowerIds: [ID]
 }
 
 type Query {

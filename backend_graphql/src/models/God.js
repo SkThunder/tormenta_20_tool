@@ -29,24 +29,24 @@ const GodSchema = new mongoose.Schema(
       enum: energyTypes,
     },
     //Classes permitidas do Deus
-    approvedClasses: [
+    approvedClassIds: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "classes",
       },
     ],
     //Raças permitidas do Deus
-    approvedRaces: [
+    approvedRaceIds: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "races",
       },
     ],
     //Poderes concedidos do Deus
-    grantedPowers: [
+    grantedPowerIds: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "powers",
+        ref: "abilities",
       },
     ],
   },

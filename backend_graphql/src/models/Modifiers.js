@@ -3,11 +3,13 @@ import { attributeTypes, statusTypes, magicTypes } from "../utils/constants";
 
 export const AttrModifierSchema = new mongoose.Schema(
   {
+    //Atributo a ser modificado
     attribute: {
       type: String,
       enum: attributeTypes,
       required: true,
     },
+    //Número do modificador
     modifier: {
       type: Number,
       required: true,
@@ -18,11 +20,13 @@ export const AttrModifierSchema = new mongoose.Schema(
 
 export const StatusModifierSchema = new mongoose.Schema(
   {
+    //Tipo de modificação de status
     status: {
       type: String,
       enum: statusTypes,
       required: true,
     },
+    //Número do modificador
     modifier: {
       type: Number,
       required: true,
@@ -31,32 +35,35 @@ export const StatusModifierSchema = new mongoose.Schema(
   { timestamps: false, versionKey: false }
 );
 
-export const MagicAditionSchema = new mongoose.Schema(
+export const SkillModifierSchema = new mongoose.Schema(
   {
-    magic: {
+    skillId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "magics",
+      ref: "skills",
     },
-    type: {
-      type: String,
-      enum: magicTypes,
-    },
-    keyAttribute: {
-      type: String,
-      enum: attributeTypes,
-    },
+    modifier: Number,
   },
   { timestamps: false, versionKey: false }
 );
 
-export const HabilitySchema = new mongoose.Schema(
+export const MagicAditionSchema = new mongoose.Schema(
   {
-    name: String,
-    description: String,
-    cost: Number,
-    statusModifiers: [StatusModifierSchema],
-    magicChoices: [MagicAditionSchema],
-    numberOfMagics: Number,
+    //Magia disponível
+    magicId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "magics",
+      required: true,
+    },
+    //Tipo da magia
+    type: {
+      type: String,
+      enum: magicTypes,
+    },
+    //Atributo chave de conjuração da magia
+    keyAttribute: {
+      type: String,
+      enum: attributeTypes,
+    },
   },
   { timestamps: false, versionKey: false }
 );
