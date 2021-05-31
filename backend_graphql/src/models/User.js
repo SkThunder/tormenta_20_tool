@@ -14,10 +14,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    firebaseId: {
-      type: String,
-      required: false,
-    },
+    firebaseId: String,
   },
   { timestamps: false, versionKey: false }
 );

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { energyTypes } from "../utils/constants";
 
 const GodSchema = new mongoose.Schema(
   {
@@ -8,36 +9,24 @@ const GodSchema = new mongoose.Schema(
       required: true,
     },
     //Descrição do Deus
-    description: {
-      type: String,
-    },
+    description: String,
     //Porfolio do Deus
-    portfolio: [
-      {
-        type: String,
-      },
-    ],
+    portfolio: [String],
     //Obrigações e Restrições do Deus
-    obligations: {
-      type: String,
-    },
+    obligations: String,
     //Crenças e Objetivos do Deus
-    creeds: {
-      type: String,
-    },
+    creeds: String,
     //Armas preferidas do Deus
     favoriteWeapon: {
       type: String,
-      default: "none",
+      default: "NONE",
     },
     //Símbolo sagrado do Deus
-    holySymbol: {
-      type: String,
-    },
+    holySymbol: String,
     //Tipo de energia do Deus
     energyType: {
       type: String,
-      enum: ["dark", "light", "any"],
+      enum: energyTypes,
     },
     //Classes permitidas do Deus
     approvedClasses: [

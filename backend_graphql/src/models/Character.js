@@ -12,64 +12,45 @@ const CharacterSchema = new mongoose.Schema(
       type: String,
       default: "Novo Personagem",
     },
-    //Força
-    str: {
-      type: Number,
-    },
-    //Destreza
-    dex: {
-      type: Number,
-    },
-    //Constituição
-    con: {
-      type: Number,
-    },
-    //Inteligência
-    int: {
-      type: Number,
-    },
-    //Sabedoria
-    wis: {
-      type: Number,
-    },
-    //Carisma
-    car: {
-      type: Number,
-    },
-    //Pontos de vida máximos
-    pv: {
-      type: Number,
-    },
-    //Pontos de vida atuais
-    currPv: {
-      type: Number,
-    },
-    //Pontos de mana máximos
-    pm: {
-      type: Number,
-    },
-    //Pontos de vida atuais
-    currPm: {
-      type: Number,
-    },
-    //Ponto de experiência do Personagem
-    exp: {
-      type: Number,
-    },
-    //Personagem público
-    isPublic: {
-      type: Boolean,
-    },
-    //ID - Devoto de: Deus
-    devoutGodId: {
+    //ID - Raça
+    raceId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "gods",
+      ref: "races",
     },
     //ID - Origem
     originId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "origins",
     },
+    //ID - Devoto de: Deus
+    devoutGodId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "gods",
+    },
+    //Força
+    str: Number,
+    //Destreza
+    dex: Number,
+    //Constituição
+    con: Number,
+    //Inteligência
+    int: Number,
+    //Sabedoria
+    wis: Number,
+    //Carisma
+    car: Number,
+    //Pontos de vida máximos
+    pv: Number,
+    //Pontos de vida atuais
+    currPv: Number,
+    //Pontos de mana máximos
+    pm: Number,
+    //Pontos de vida atuais
+    currPm: Number,
+    //Ponto de experiência do Personagem
+    exp: Number,
+    //Personagem público
+    isPublic: Boolean,
   },
   { timestamps: false, versionKey: false }
 );

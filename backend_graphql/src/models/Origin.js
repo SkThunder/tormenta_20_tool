@@ -8,9 +8,7 @@ const OriginSchema = new mongoose.Schema(
       required: true,
     },
     //Descrição da origem
-    description: {
-      type: String,
-    },
+    description: String,
     //ID - Beneficios de origem - Perícias
     skillIds: {
       type: [
