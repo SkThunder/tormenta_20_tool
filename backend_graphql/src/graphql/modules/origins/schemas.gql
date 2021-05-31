@@ -16,10 +16,6 @@ type Origin {
   ID - Benefícios de origem - Poderes
   """
   abilityIds: [ID]
-  """
-  ID - Itens iniciais
-  """
-  initialItemIds: [ID]
 }
 
 input InitialOriginInput {

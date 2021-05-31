@@ -73,4 +73,18 @@ export default {
     //Poderes de classe
     "CLASS",
   ],
+  sizeTypes: [
+    //Minúsculo
+    "MIN",
+    //Pequeno
+    "SMALL",
+    //Médio
+    "MEDIUM",
+    //Grande
+    "BIG",
+    //Enorme
+    "HUGE",
+    //Colossal
+    "COL"
+  ]
 };

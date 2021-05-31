@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { AttrModifierSchema } from "./Modifiers";
+import { sizeTypes } from "../utils/constants"
 
 const RaceSchema = new mongoose.Schema(
   {
@@ -21,6 +22,11 @@ const RaceSchema = new mongoose.Schema(
         ref: "abilities",
       },
     ],
+    //Tamanho da raça
+    raceSize: {
+      type: String,
+      enum: sizeTypes
+    },
   },
   { timestamps: false, versionKey: false }
 );
