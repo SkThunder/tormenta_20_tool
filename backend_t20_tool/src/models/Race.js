@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { AttrModifierSchema } from "./Modifiers";
+import { AttrModifierSchema } from "./Modifier";
 import { sizeTypes } from "../utils/constants"
 
 const RaceSchema = new mongoose.Schema(

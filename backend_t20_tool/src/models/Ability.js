@@ -4,7 +4,7 @@ import {
   MagicAditionSchema,
   AttrModifierSchema,
   SkillModifierSchema,
-} from "./Modifiers";
+} from "./Modifier";
 import { actionTypes, powerTypes, attributeTypes } from "../utils/constants";
 
 const PreRequisiteSchema = new mongoose.Schema(
