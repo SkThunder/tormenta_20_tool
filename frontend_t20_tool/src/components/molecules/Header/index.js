@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container } from "./styles";
-import { ThemeContext } from "styled-components";
+import useToggleTheme from "../../../utils/useToggleTheme";
 
-const Header = ({ toggleTheme }) => {
-  const { colors, title } = useContext(ThemeContext);
+const Header = () => {
+  const { toggleTheme } = useToggleTheme();
+
   return (
     <Container>
       Hello world

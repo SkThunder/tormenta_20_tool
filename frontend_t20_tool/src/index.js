@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { ThemeContextProvider } from "./context/toggleTheme";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ThemeContextProvider>
       <App />
-    </ThemeProvider>
+    </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

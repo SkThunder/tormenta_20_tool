@@ -1,11 +1,15 @@
-export default {
-    title: 'light',
+import colors from "../colors";
+import { LIGHT } from "../../constants/theme";
 
-    colors: {
-        primary: '#c62e65',
-        secundary: '#d63Af9',
+const config = {
+  title: LIGHT,
 
-        background: "#f5f5f5",
-        text: "#333"
-    }
-}
+  colors: {
+    primary: colors.light_brown,
+    secundary: colors.bright_red,
+
+    background: colors.light_grey,
+    text: colors.moderate_red,
+  },
+};
+export default config;

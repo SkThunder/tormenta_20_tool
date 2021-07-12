@@ -1,11 +1,16 @@
-export default {
-    title: 'dark',
+import colors from "../colors";
+import { DARK } from "../../constants/theme";
 
-    colors: {
-        primary: '#333',
-        secundary: '#d63Af9',
+const config = {
+  title: DARK,
 
-        background: "#222",
-        text: "#fff"
-    }
-}
+  colors: {
+    primary: colors.dark_purple,
+    secundary: colors.bright_red,
+
+    background: colors.xiketic,
+    text: colors.light_grey,
+  },
+};
+
+export default config;
