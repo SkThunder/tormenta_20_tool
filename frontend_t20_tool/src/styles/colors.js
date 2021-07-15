@@ -12,6 +12,10 @@ const config = {
     almost_white: "#E8D1B5",
     bluish_grey: "#727175",
     light_grey: "#DDD9D5",
+    dark_grey: "#121212",
+    
+    white: "#FFF",
+    black: "#000"
 }
 
 export default config;

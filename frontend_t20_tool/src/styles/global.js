@@ -24,8 +24,8 @@ html {
 }
 
 body {
-    background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};;
+    background: ${(props) => props.theme.colors.deep_background};
+    color: ${(props) => props.theme.colors.high_text};;
     font: 400 16 Tormenta20, Iowan_Old_Style_Regular, sans-serif;
     font-size: 100%;
 }

@@ -6,10 +6,19 @@ const config = {
 
   colors: {
     primary: colors.light_brown,
-    secundary: colors.bright_red,
+    secondary: colors.light_yellow,
 
-    background: colors.light_grey,
-    text: colors.moderate_red,
+    deep_background: colors.almost_white,
+    medium_background: colors.light_brown,
+    pop_background: colors.light_brown,
+
+    disabled_box: colors.pale_pink,
+    neutral_box: colors.light_grey,
+    active_box: colors.almost_white,
+    
+    high_text: colors.black,
+    medium_text: colors.black,
+    disabled_text: colors.black,
   },
 };
 export default config;
