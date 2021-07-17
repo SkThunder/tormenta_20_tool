@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 60px;
+  min-height: 3.5em;
+  height: 15vh;
   background: ${(props) => props.theme.colors.medium_background};
   color: ${(props) => props.theme.colors.high_text};
   display: flex;

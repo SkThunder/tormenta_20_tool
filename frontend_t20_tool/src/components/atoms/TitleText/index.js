@@ -1,5 +1,12 @@
-import React from 'react';
+import React from "react";
+import { Title } from "./styles";
 
-const TitleText = ({onClick, children, text}) => {
-    return <h1 text={text} onClick={onClick}></h1>
-}
+const TitleText = ({ onClick, children, text, style }) => {
+  return (
+    <Title text={text} onClick={onClick} style={style}>
+      {children}
+    </Title>
+  );
+};
+
+export default TitleText;

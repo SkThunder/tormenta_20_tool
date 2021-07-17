@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import FlexBox from "../components/atoms/FlexBox";
+import Screen from "../components/atoms/Screen";
 import Header from "../components/molecules/Header";
 
 const SimpleText = ({ text, ...props }) => {
@@ -11,7 +13,12 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Header/>
+          <Screen>
+            <Header />
+            <FlexBox>
+              
+            </FlexBox>
+          </Screen>
         </Route>
         <Route path="/loading">
           <SimpleText>Olá</SimpleText>
