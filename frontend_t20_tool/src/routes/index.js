@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import FlexBox from "../components/atoms/FlexBox";
-import Screen from "../components/atoms/Screen";
+import InputText from "../components/atoms/InputText";
 import Header from "../components/molecules/Header";
+import FlexScreen from "../components/atoms/FlexScreen";
 
 const SimpleText = ({ text, ...props }) => {
   return <>{props.children}</>;
@@ -13,12 +14,12 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Screen>
+          <FlexScreen>
             <Header />
             <FlexBox>
-              
+              <InputText placeholder="Teste"/>
             </FlexBox>
-          </Screen>
+          </FlexScreen>
         </Route>
         <Route path="/loading">
           <SimpleText>Olá</SimpleText>

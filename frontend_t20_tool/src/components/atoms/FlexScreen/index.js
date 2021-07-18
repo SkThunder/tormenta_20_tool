@@ -1,8 +1,8 @@
 import React from "react";
 import { FullScreen } from "./styles";
 
-const Screen = ({ children }) => {
+const FlexScreen = ({ children }) => {
   return <FullScreen>{children}</FullScreen>;
 };
 
-export default Screen;
+export default FlexScreen;
