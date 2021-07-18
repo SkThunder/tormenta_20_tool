@@ -1,17 +1,17 @@
 import React from "react";
-import { Image, Container, ClickContainer } from "./styles";
-import { DEFAULT_TITLE } from "../../../constants/image";
+import { Container, ClickContainer } from "./styles";
 import { pickMode, getSize, getHoverSize } from "../../../utils/imageFunctions";
+import { DEFAULT_TITLE } from "../../../constants/icon";
 
-const ImageBox = ({
+const IconBox = ({
   onClick,
   style,
-  src,
   borderMode,
   size,
   title,
   transparent,
   opacity,
+  children,
 }) => {
   const [height, width] = getSize(size);
   const [hHeight, hWidth] = getHoverSize([height, width]);
@@ -23,9 +23,10 @@ const ImageBox = ({
       height={height}
       width={width}
       transparent={transparent}
+      title={title ? title : DEFAULT_TITLE}
       opacity={opacity ? opacity : 1}
     >
-      <Image src={src} title={title ? title : DEFAULT_TITLE} />
+      {children}
     </Container>
   ) : (
     <ClickContainer
@@ -35,13 +36,14 @@ const ImageBox = ({
       width={width}
       transparent={transparent}
       opacity={opacity ? opacity : 1}
+      title={title ? title : DEFAULT_TITLE}
       hHeight={hHeight}
       hWidth={hWidth}
       onClick={onClick}
     >
-      <Image src={src} title={title ? title : DEFAULT_TITLE} />
+      {children}
     </ClickContainer>
   );
 };
 
-export default ImageBox;
+export default IconBox;

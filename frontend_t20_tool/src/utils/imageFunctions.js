@@ -1,5 +1,5 @@
 import {
-    DEFAULT_HEIGTH,
+    DEFAULT_HEIGHT,
     DEFAULT_WIDTH,
     HOVER_MULTIPLIER,
   } from "../constants/image";
@@ -27,7 +27,7 @@ export function getSize(param) {
   } else if (Object.prototype.toString.call(param) === "[object String]") {
     return [param, param];
   } else {
-    return [DEFAULT_HEIGTH, DEFAULT_WIDTH];
+    return [DEFAULT_HEIGHT, DEFAULT_WIDTH];
   }
 }
 

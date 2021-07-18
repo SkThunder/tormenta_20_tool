@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export const Image = styled.img`
-  //Display
-  display: block;
-  max-height: 100%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-`;
-
 export const Container = styled.div`
   //Colors & Fonts
   background-color: ${(props) => {
@@ -19,7 +10,6 @@ export const Container = styled.div`
       return defaultColor;
     }
   }};
-  opacity: ${(props) => props.opacity};
 
   //Display
   display: flex;
@@ -27,16 +17,23 @@ export const Container = styled.div`
   justify-content: center;
   height: ${(props) => props.height};
   width: ${(props) => props.width};
+  flex: ${(props) => props.grow};
   min-height: ${(props) => props.height};
   min-width: ${(props) => props.width};
   overflow: hidden;
-  padding: 5px;
 
   //Border & Style
   border-radius: ${(props) => (props.borderMode === 0 ? "10px" : "50%")};
 `;
 
 export const ClickContainer = styled(Container)`
+  & > * {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
   &:hover {
     height: ${(props) => props.hHeight};
     width: ${(props) => props.hWidth};

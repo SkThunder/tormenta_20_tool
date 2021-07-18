@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import FlexBox from "../components/atoms/FlexBox";
 import InputText from "../components/atoms/InputText";
 import Header from "../components/molecules/Header";
-import FlexScreen from "../components/atoms/FlexScreen";
+
+import ThemeButton from "../components/molecules/ThemeButton";
 
 const SimpleText = ({ text, ...props }) => {
   return <>{props.children}</>;
@@ -14,12 +15,12 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <FlexScreen>
-            <Header />
+          <Header>
             <FlexBox>
-              <InputText placeholder="Teste"/>
+              <InputText placeholder="Teste" />
+              <ThemeButton style={{ margin: "0 0 0 15px" }} />
             </FlexBox>
-          </FlexScreen>
+          </Header>
         </Route>
         <Route path="/loading">
           <SimpleText>Olá</SimpleText>

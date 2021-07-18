@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FullScreen = styled.section`
+export const Flex = styled.div`
   //Colors & Fonts
   background-color: ${(props) => props.theme.colors.deep_background};
 
